@@ -78,7 +78,7 @@ Vagrant.configure(2) do |config|
   # Provisioners
   config.vm.provision :shell, path: "provisioners/base.sh"
   # config.vm.provision :shell, path: "provisioners/ruby.sh"
-  config.vm.provision :shell, path: "provisioners/mysql.sh"
+  # config.vm.provision :shell, path: "provisioners/mysql.sh"
   # config.vm.provision :shell, path: "provisioners/php.sh"
   # config.vm.provision :shell, path: "provisioners/nginx.sh"
   # config.vm.provision :shell, path: "provisioners/site.sh"
