@@ -24,6 +24,6 @@ server {
 }
 EOF
 
-ln -s /etc/nginx/sites-available/project /etc/nginx/sites-enabled/project
+ln -s /etc/nginx/sites-available/wordstwo /etc/nginx/sites-enabled/wordstwo
 
 sudo service nginx reload
