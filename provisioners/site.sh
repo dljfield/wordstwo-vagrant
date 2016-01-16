@@ -2,15 +2,15 @@
 
 echo -e "\033[0;32m >>> Setting up site \033[0m"
 
-cat <<EOF > /etc/nginx/sites-available/wordstwo
+cat <<EOF > /etc/nginx/sites-available/project
 server {
     listen 80;
     listen [::]:80 ipv6only=on;
 
-    root /var/www/wordstwo/public;
+    root /var/www/project/public;
     index index.html index.htm;
 
-    server_name wordstwo.dev;
+    server_name project.dev;
 
     location / {
         try_files \$uri \$uri.html \$uri/ =404;
@@ -24,6 +24,6 @@ server {
 }
 EOF
 
-ln -s /etc/nginx/sites-available/wordstwo /etc/nginx/sites-enabled/wordstwo
+ln -s /etc/nginx/sites-available/project /etc/nginx/sites-enabled/project
 
 sudo service nginx reload
