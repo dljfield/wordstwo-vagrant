@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "project", "/var/www/project"
+  config.vm.synced_folder "project", "/var/www/wordstwo"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -70,19 +70,19 @@ Vagrant.configure(2) do |config|
   # SHELL
 
   # Hostname
-  config.vm.hostname = "project.dev"
+  config.vm.hostname = "wordstwo.dev"
 
   # hostsupdater
   config.hostsupdater.remove_on_suspend = false
 
   # Provisioners
   config.vm.provision :shell, path: "provisioners/base.sh"
-  # config.vm.provision :shell, path: "provisioners/ruby.sh"
+  config.vm.provision :shell, path: "provisioners/ruby.sh"
   # config.vm.provision :shell, path: "provisioners/mysql.sh"
   # config.vm.provision :shell, path: "provisioners/php.sh"
-  # config.vm.provision :shell, path: "provisioners/nginx.sh"
-  # config.vm.provision :shell, path: "provisioners/site.sh"
-  # config.vm.provision :shell, path: "provisioners/npm_setup.sh"
-  # config.vm.provision :shell, path: "provisioners/node.sh"
-  # config.vm.provision :shell, path: "provisioners/gulp.sh"
+  config.vm.provision :shell, path: "provisioners/nginx.sh"
+  config.vm.provision :shell, path: "provisioners/site.sh"
+  config.vm.provision :shell, path: "provisioners/npm_setup.sh"
+  config.vm.provision :shell, path: "provisioners/node.sh"
+  config.vm.provision :shell, path: "provisioners/gulp.sh"
 end

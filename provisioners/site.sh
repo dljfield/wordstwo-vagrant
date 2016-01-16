@@ -2,15 +2,15 @@
 
 echo -e "\033[0;32m >>> Setting up site \033[0m"
 
-cat <<EOF > /etc/nginx/sites-available/project
+cat <<EOF > /etc/nginx/sites-available/wordstwo
 server {
     listen 80;
     listen [::]:80 ipv6only=on;
 
-    root /var/www/project/public;
+    root /var/www/wordstwo/public;
     index index.html index.htm;
 
-    server_name project.dev;
+    server_name wordstwo.dev;
 
     location / {
         try_files \$uri \$uri.html \$uri/ =404;
